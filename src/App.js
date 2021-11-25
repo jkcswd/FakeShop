@@ -17,7 +17,7 @@ const App = () => {
 
   const fetchProducts = async () => {
     const response = await fetch('https://fakestoreapi.com/products/')
-    const products = response.json()
+    const products = await response.json()
     setProducts(products)
   }
   return (
