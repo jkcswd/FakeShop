@@ -1,14 +1,21 @@
 import React from "react";
+import { Outlet } from "react-router";
 import './App.css';
-import { BrowserRouter } from "react-router-dom";
-import PrimaryLayout from "./components/PrimaryLayout";
+import Nav from "./components/Nav";
+
 
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <PrimaryLayout />
-    </BrowserRouter>
+    <div className="App">
+      <header>
+        <Nav/>
+      </header>
+      <main>
+        <Outlet/>
+      </main>
+      <footer></footer>
+    </div>
   );
 }
 
