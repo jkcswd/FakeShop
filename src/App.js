@@ -14,7 +14,7 @@ const App = () => {
       <main>
         <Outlet/>
       </main>
-      <footer></footer>
+      <footer>Made by James Spencer</footer>
     </div>
   );
 }
