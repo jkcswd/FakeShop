@@ -17,7 +17,7 @@ const App = () => {
   },[]);
 
   const fetchProducts = async () => {
-    const response = await fetch('https://fakestoreapi.com/products/')
+    const response = await fetch('https://fakestoreapi.com/products/', {mode:'cors'})
     const products = await response.json()
     setProducts(products)
     setLoading(false)
