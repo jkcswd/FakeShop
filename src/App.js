@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Checkout from './components/Checkout';
+import ItemDetail from "./components/ItemDetail";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path="shop" element={<Shop products={products} loading={loading}/>}/>
+          <Route path="shop/:id" element={<ItemDetail products={products}/>}/>
           <Route path="checkout" element={<Checkout/>}/>
         </Route>
       </Routes>
