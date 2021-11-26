@@ -7,7 +7,7 @@ const ShopDisplay = (props) => {
     <div className="ShopDisplay">
       {props.products.map(product => {
         return (
-          <Item product={product}/>
+          <Item key={product.id} product={product}/>
         )
       })}
     </div>
