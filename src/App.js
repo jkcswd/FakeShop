@@ -10,22 +10,26 @@ import ItemDetail from "./components/ItemDetail";
 
 const App = () => {
   const [products, setProducts] = useState([]);
-  const [basket, setBasket] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [basket, setBasket] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() =>{
     fetchProducts();
   },[]);
 
   const fetchProducts = async () => {
-    const response = await fetch('https://fakestoreapi.com/products/', {mode:'cors'})
-    const products = await response.json()
-    setProducts(products)
-    setLoading(false)
+    const response = await fetch('https://fakestoreapi.com/products/', {mode:'cors'});
+    const products = await response.json();
+    setProducts(products);
+    setLoading(false);
   }
 
   const addToBasket = (e) => {
-    setBasket([...basket, products[e.target.dataset.id]])
+    setBasket([...basket, products[e.target.dataset.id]]);
+  }
+
+  const removeFromBasket = (e) => {
+    setBasket(basket.filter((_, index) => index !== parseInt(e.target.dataset.index)))
   }
 
   return (
@@ -39,11 +43,11 @@ const App = () => {
             path="shop/:id" 
             element={<ItemDetail products={products} loading={loading} addToBasket={addToBasket}/>}
           />
-          <Route path="checkout" element={<Checkout basket={basket}/>}/>
+          <Route path="checkout" element={<Checkout basket={basket} removeFromBasket={removeFromBasket}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 const Layout = (props) => {
