@@ -25,7 +25,16 @@ const App = () => {
   }
 
   const addToBasket = (e) => {
-    setBasket([...basket, products[e.target.dataset.id]]);
+    e.preventDefault()
+
+    const amount = e.target.elements[0].value
+    const itemArray = []
+
+    for ( let i=0; i< amount; i++) {
+      itemArray.push(products[e.target.dataset.id])
+    }
+    
+    setBasket([...basket, ...itemArray]);
   }
 
   const removeFromBasket = (e) => {
