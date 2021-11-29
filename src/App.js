@@ -28,17 +28,20 @@ const App = () => {
     e.preventDefault()
 
     const amount = e.target.elements[0].value
-    const itemArray = []
-
-    for ( let i=0; i< amount; i++) {
-      itemArray.push(products[e.target.dataset.id])
+    const item = {
+      item:products[e.target.dataset.id],
+      amount:amount
     }
-    
-    setBasket([...basket, ...itemArray]);
+
+    setBasket([...basket, item]);
   }
 
   const removeFromBasket = (e) => {
     setBasket(basket.filter((_, index) => index !== parseInt(e.target.dataset.index)))
+  }
+
+  const reduceBasket = () => {
+    
   }
 
   return (
