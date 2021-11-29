@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router";
 import './App.css';
-import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Checkout from './components/Checkout';
 import ItemDetail from "./components/ItemDetail";
+import MainLayout from "./components/MainLayout";
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [basket, setBasket] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // For rendering loading screen
 
   useEffect(() =>{
     fetchProducts();
@@ -41,14 +40,13 @@ const App = () => {
   }
 
   const reduceBasket = () => {
-    
+
   }
 
   return (
-    // Routes are in this file to allow props to be passed from state to child components while using <Outlet/>.
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout basketSize={basket.length}/>}>
+        <Route path="/" element={<MainLayout basketSize={basket.length}/>}>
           <Route index element={<Home/>}/>
           <Route path="shop" element={<Shop products={products} loading={loading}/>}/>
           <Route 
@@ -59,20 +57,6 @@ const App = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
-}
-
-const Layout = (props) => {
-  return (
-    <div className="App">
-      <header>
-        <Nav basketSize={props.basketSize}/>
-      </header>
-      <main>
-        <Outlet/>
-      </main>
-      <footer>Made by James Spencer</footer>
-    </div>
   );
 }
 
