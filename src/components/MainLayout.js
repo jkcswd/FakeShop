@@ -6,8 +6,9 @@ import '../styles/MainLayout.css'
 
 const MainLayout = (props) => {
   return (
-    <div className="App">
+    <div className="MainLayout">
       <header>
+        <div className="title">FakeShop</div>
         <Nav basketSize={props.basketSize}/>
       </header>
       <main>

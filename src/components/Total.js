@@ -1,8 +1,9 @@
 import React from "react";
+import '../styles/Total.css'
 
 const Total = (props) => {
   return (
-    <div>
+    <div className="Total">
       Total:£{
         props.basket.reduce((sum,item) => {
           return sum += item.item.price * item.amount

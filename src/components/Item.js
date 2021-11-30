@@ -6,15 +6,15 @@ const Item = (props) => {
   return (
       <div className="Item">
         <Link to={`/shop/${props.product.id}`}>
-          <div>
-            <h3>{props.product.title}</h3>
-            <h4>£{props.product.price}</h4>
-            <img src={props.product.image} alt={props.product.title}></img>
+          <div className="card">
+            <img src={props.product.image} alt={props.product.title}/>
+            <div className="info"> 
+              <h3>{props.product.title}</h3>
+              <h4>£{props.product.price}</h4>
+            </div>
           </div>
         </Link>
       </div>
-   
-    
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Loading from './Loading'
+import '../styles/ItemDetail.css'
 
 const ItemDetail = (props) => {
   const [amountItems, setAmountItems] = useState(0)
@@ -14,16 +15,16 @@ const ItemDetail = (props) => {
     <div className="ItemDetail">
       {props.loading && <Loading/>}
       {!props.loading && 
-        <div>
+        <div className="item-div">
           <h1>{product.title}</h1>
           <img src={product.image} alt={product.title}/>
           <p>{product.description}</p>
           <form className="add-to-basket" onSubmit={props.addToBasket} data-id={id - 1}>
             <label>
-              Amount
+              Amount:
               <input type="number" value={amountItems} name="Amount" onChange={handleChange}/>
             </label>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit"  className="btn" />
           </form>
         </div>
       }

@@ -10,7 +10,7 @@ import MainLayout from "./components/MainLayout";
 const App = () => {
   const [products, setProducts] = useState([]);
   const [basket, setBasket] = useState([]);
-  const [loading, setLoading] = useState(true); // For rendering loading screen
+  const [loading, setLoading] = useState(true); // For conditional rendering  of loading screen.
 
   useEffect(() =>{
     fetchProducts();
