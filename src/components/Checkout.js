@@ -1,5 +1,6 @@
 import React from "react";
 import uniqid from 'uniqid'
+import Total from "./Total";
 
 const Checkout = (props) => {
   // TODO add function to add up quantities of same products
@@ -19,7 +20,7 @@ const Checkout = (props) => {
           </div>
         )
       })}
-      <div>Total:£</div>
+      <Total basket={props.basket}/>
     </div>
   );
 }
