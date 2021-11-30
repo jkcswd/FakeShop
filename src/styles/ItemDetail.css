@@ -1,0 +1,16 @@
+.ItemDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ItemDetail form {
+  display: flex;
+  justify-content: center;
+}
+
+.item-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

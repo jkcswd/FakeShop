@@ -1,14 +1,32 @@
 header {
   height: 10%;
+  padding:20px;
+  display: flex;
+  flex-direction: column;
 }
 main {
   min-height: 85%;
   height: fit-content;
+  padding:20px;
 }
 footer {
   height: 5%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header, footer {
   background-color: rgb(24, 24, 24);
   color: whitesmoke;
+}
+
+.MainLayout {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+.title {
+  font-size: 50px;
 }
