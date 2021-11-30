@@ -1,0 +1,14 @@
+header {
+  height: 10%;
+}
+main {
+  min-height: 85%;
+  height: fit-content;
+}
+footer {
+  height: 5%;
+}
+header, footer {
+  background-color: rgb(24, 24, 24);
+  color: whitesmoke;
+}
