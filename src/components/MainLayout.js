@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 import Nav from "./Nav";
+import '../styles/MainLayout.css'
 
 
 const MainLayout = (props) => {
