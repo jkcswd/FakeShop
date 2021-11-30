@@ -17,6 +17,7 @@ const App = () => {
   },[]);
 
   const fetchProducts = async () => {
+    // As amount of data for all products is small so fetch all at initial load of website.
     const response = await fetch('https://fakestoreapi.com/products/', {mode:'cors'});
     const products = await response.json();
     setProducts(products);
@@ -24,7 +25,7 @@ const App = () => {
   }
 
   const addToBasket = (e) => {
-    e.preventDefault()
+    e.preventDefault() // To prevent refresh of page on click.
 
     const amount = e.target.elements[0].value
     const item = {

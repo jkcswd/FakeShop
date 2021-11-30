@@ -3,8 +3,8 @@ import Loading from './Loading'
 
 const ItemDetail = (props) => {
   const [amountItems, setAmountItems] = useState(0)
-  const id = window.location.href.split('/shop/')[1] // Quick fix as match prop not working. TODO: Fix using match.
-  const product = props.products[id -1] 
+  const id = window.location.href.split('/shop/')[1] // Quick fix as match prop not working. TODO: Fix using {match}.
+  const product = props.products[id -1] // api id starts at 1 whereas array of products is 0 indexed hence '-1'.
 
   const handleChange = (e) => {
     setAmountItems(e.target.value)
