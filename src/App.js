@@ -27,7 +27,7 @@ const App = () => {
   const addToBasket = (e) => {
     e.preventDefault() // To prevent refresh of page on click.
 
-    const amount = e.target.elements[0].value
+    const amount = parseInt(e.target.elements[0].value)
     const item = {
       item:products[e.target.dataset.id],
       amount:amount
@@ -36,12 +36,17 @@ const App = () => {
     setBasket([...basket, item]);
   }
 
-  const removeFromBasket = (e) => {
-    setBasket(basket.filter((_, index) => index !== parseInt(e.target.dataset.index)))
+  const reduceBasketAmount = (e) => {
+    // clone array, modify then set state is easiest way to access and modify by index
+    const newBasket = [...basket];
+    newBasket[parseInt(e.target.parentElement.dataset.id)].amount -= 1;
+    setBasket(newBasket)
   }
 
-  const reduceBasket = () => {
-
+  const increaseBasketAmount = (e) => {
+    const newBasket = [...basket];
+    newBasket[parseInt(e.target.parentElement.dataset.id)].amount += 1;
+    setBasket(newBasket)
   }
 
   return (
@@ -54,7 +59,13 @@ const App = () => {
             path="shop/:id" 
             element={<ItemDetail products={products} loading={loading} addToBasket={addToBasket}/>}
           />
-          <Route path="checkout" element={<Checkout basket={basket} removeFromBasket={removeFromBasket}/>}/>
+          <Route path="checkout" element={
+            <Checkout 
+              basket={basket} 
+              reduceBasketAmount={reduceBasketAmount} 
+              increaseBasketAmount={increaseBasketAmount}
+            />
+          }/>
         </Route>
       </Routes>
     </BrowserRouter>
