@@ -37,7 +37,7 @@ const App = () => {
   }
 
   const reduceBasketAmount = (e) => {
-    // clone array, modify then set state is easiest way to access and modify by index
+    // clone array, modify then set state is easiest way modify by index as assigning array is a reference not a copy.
     const newBasket = [...basket];
     newBasket[parseInt(e.target.parentElement.dataset.id)].amount -= 1;
     setBasket(newBasket)
