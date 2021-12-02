@@ -12,6 +12,8 @@ body,html, #root {
   font-size: 15px;
   border-radius: 8px;
   color: whitesmoke;
+  padding: 5px;
+  margin:5px
 }
 .btn:hover {
   opacity: 0.6;

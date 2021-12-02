@@ -3,6 +3,7 @@
   padding: 10px;
   box-shadow: black 0 0 4px 2px;
   transition: 0.3s;
+  border-radius: 10px;
 }
 .Item:hover {
   transform: scale(1.1);
