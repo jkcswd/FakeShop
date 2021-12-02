@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "react-router-dom": "^6.0.2",
     "uniqid": "^5.4.0"
   }
