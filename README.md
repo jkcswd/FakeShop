@@ -6,4 +6,4 @@ An example shop built using React and React-Router-Dom. The app consumes the fak
 - React-Router-Dom
 
 ## How to use
-Access at this link: https://fakeshop-8ba44.web.app/
+Access at this link: https://fakeshop-8ba44.firebaseapp.com/
