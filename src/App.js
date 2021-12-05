@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
-import { HashRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Checkout from './components/Checkout';
@@ -50,7 +50,7 @@ const App = () => {
   }
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout basketSize={basket.length}/>}>
           <Route index element={<Home/>}/>
@@ -68,7 +68,7 @@ const App = () => {
           }/>
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
