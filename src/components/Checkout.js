@@ -8,20 +8,36 @@ const Checkout = (props) => {
   return (
     <div className="Checkout">
       <h1>Basket</h1>
-      {props.basket.map((item, index) => {
-        return (
-          <div className="checkout-item" key={uniqid()} > 
-            <div>{item.item.title}</div>
-            <div data-id={index}>
-              <button onClick={props.reduceBasketAmount}>-</button>
-              Quantity:{item.amount}
-              <button onClick={props.increaseBasketAmount}>+</button>
-            </div>
-            <div>£{item.item.price * item.amount}</div>
-          </div>
-        )
-      })}
-      <Total basket={props.basket}/>
+      <table>
+        <thead>
+          <tr>
+            <th>ITEM</th>
+            <th>QTY</th>
+            <th>PRICE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.basket.map((item, index) => {
+            return (
+              <tr key={uniqid()} > 
+                <td>{item.item.title}</td>
+                <td data-id={index}>
+                  <button className="btn" onClick={props.reduceBasketAmount}>-</button>
+                  {item.amount}
+                  <button className="btn" onClick={props.increaseBasketAmount}>+</button>
+                </td>
+                <td>£{item.item.price * item.amount}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="2">TOTAL</td>
+            <td><Total basket={props.basket}/></td>
+          </tr> 
+        </tfoot>       
+      </table>
       <button className="btn">Checkout</button>
     </div>
   );
