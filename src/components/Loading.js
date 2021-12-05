@@ -1,9 +1,11 @@
 import React from "react";
+import '../styles/Loading.css'
 
 const Loading = () => {
   return (
     <div className="Loading">
-      <h2>LOADING!!!</h2>
+      Loading...
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
   );
 }
