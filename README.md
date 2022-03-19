@@ -4,7 +4,7 @@ An example shop built using React and React-Router-Dom. The app consumes the fak
 - [Access a live version of the app here.](https://fakeshop-8ba44.firebaseapp.com/)
 
 ## Demo
-(create gif of app being used)
+![FakeShop Demo](README/demo.gif)
 
 ## Tech
 - React
